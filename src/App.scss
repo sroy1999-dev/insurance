@@ -1,38 +1,89 @@
-.App {
+:root {
+  --dark-violet: hsl(256, 26%, 20%);
+  --grey-blue: hsl(216, 30%, 68%);
+  --very-dark-violet: hsl(270, 9%, 17%);
+  --dark-grey-violet: hsl(273, 4%, 51%);
+  --light-grey: hsl(0, 0%, 98%);
+  --white: #ffffff;
+  --fw-700: 700;
+  --fw-400: 400;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Serif Display", serif;
+  line-height: 1;
+  font-weight: var(--fw-400);
+}
+
+h1, .title1 {
+  font-size: 6rem;
+  position: relative;
+  @media screen and (max-width: 768px) {
+    font-size: 4rem;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    width: 10rem;
+    height: 2px;
+    top: -5rem;
+    background-color: var(--white);
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.title1--mod {
+  &::before {
+    content: '';
+    background-color: var(--dark-violet);
+    opacity: 0.6;
+  }
+}
+
+h3, .title3 {
+  font-size: 2.2rem;
+}
+
+p {
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: auto;
+  padding: 2rem;
+  @media screen and (max-width: 768px) {
+    padding: 0;
+  }
+}
+
+.btn {
+  width: 100%;
+  max-width: 15rem;
+  padding: 1rem 2rem;
+  border: 1px solid var(--white);
+  background: transparent;
+  color: var(--white);
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  &--nav-btn {
+    border: 1px solid var(--dark-violet);
+    color: var(--dark-violet);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+img {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+section {
+  padding: 6rem 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
